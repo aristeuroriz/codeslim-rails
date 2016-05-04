@@ -48,7 +48,9 @@ group :development do
   gem 'spring'
 end
 
-
+group :production do
+	gem 'rails_12factor'
+end
 
 #################### Camaleon CMS include all gems for plugins and themes #################### 
 require './lib/plugin_routes' 
