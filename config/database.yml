@@ -1,0 +1,22 @@
+default: &default
+  adapter: postgresql
+  encoding: utf8
+  pool: 5
+  username: rails
+  password: rails
+  template: template1
+  port: 5432
+
+development:
+  <<: *default
+  database: codeslim_development
+
+test:
+  <<: *default
+  database: codeslim_test
+
+production:
+  <<: *default
+  database: codeslim_production
+  username: codeslim
+  password: <%= ENV['CODESLIM_DATABASE_PASSWORD'] %>
